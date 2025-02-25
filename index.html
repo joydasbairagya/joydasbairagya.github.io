@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joy Das Bairagya - Academic Website</title>
+    <title>Contact - Joy Das Bairagya</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -11,6 +11,15 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
         header {
             background: #0077b6;
@@ -22,47 +31,35 @@
         nav {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             background: #005f86;
             padding: 10px 0;
         }
         nav a {
             color: white;
-            margin: 0 15px;
+            margin: 5px 15px;
             text-decoration: none;
             font-size: 18px;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        .section {
-            margin-bottom: 40px;
         }
         h2 {
             color: #0077b6;
             border-bottom: 2px solid #0077b6;
             padding-bottom: 5px;
         }
-        .publications li, .achievements li {
-            margin-bottom: 10px;
-        }
-        .contact {
-            text-align: center;
-        }
-        .contact a {
-            color: #0077b6;
-            text-decoration: none;
-            font-weight: bold;
-        }
         footer {
             text-align: center;
             padding: 10px;
             background: #005f86;
             color: white;
+        }
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav a {
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
