@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Joy Das Bairagya</title>
+    <title>Contact - Joy Das Bairagya</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -13,7 +13,8 @@
             color: #333;
         }
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 800px;
             margin: auto;
             background: white;
             padding: 20px;
@@ -30,12 +31,13 @@
         nav {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             background: #005f86;
             padding: 10px 0;
         }
         nav a {
             color: white;
-            margin: 0 15px;
+            margin: 5px 15px;
             text-decoration: none;
             font-size: 18px;
         }
@@ -49,6 +51,15 @@
             padding: 10px;
             background: #005f86;
             color: white;
+        }
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav a {
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
