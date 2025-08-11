@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Academic profile of Joy Das Bairagya - Physicist specializing in evolutionary game theory, collective decision-making, and behavioral experiments with social insects.">
+    <meta name="keywords" content="Joy Das Bairagya, Physics, Evolutionary Game Theory, Collective Behavior, Ants, Eco-evolutionary Dynamics, Postdoctoral Research">
+    <meta name="author" content="Joy Das Bairagya">
+    <title>Joy Das Bairagya - Academic Profile</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #0077b6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background: #005f86;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            margin: 5px 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            width: 85%;
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #0077b6;
+            border-bottom: 2px solid #0077b6;
+            padding-bottom: 5px;
+        }
+        .profile-img {
+            display: block;
+            max-width: 200px;
+            border-radius: 50%;
+            margin: 20px auto;
+        }
+        .publications li, .achievements li {
+            margin-bottom: 10px;
+        }
+        .contact {
+            text-align: center;
+        }
+        .contact a {
+            color: #0077b6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #005f86;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Joy Das Bairagya</h1>
+        <p>Physicist | Experiments • Theory • Simulation</p>
+    </header>
+
+    <nav>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="academics.html">Academics</a>
+        <a href="contact.html">Contact</a>
+        <a href="Joy DaS Bairagya.pdf" download>📄CV</a>
+    </nav>
+
+    <div class="container">
+    <style>
+    .photo-gallery {
+        text-align: center;
+        margin: 20px 0;
+    }
+    .photo-gallery img {
+        max-width: 250px;
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+    .photo-gallery img:hover {
+        transform: scale(1.02);
+    }
+    .indicator-dots {
+        margin-top: 10px;
+    }
+    .dot {
+        height: 10px;
+        width: 10px;
+        margin: 0 5px;
+        display: inline-block;
+        border-radius: 50%;
+        background-color: #bbb;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .dot.active {
+        background-color: #0077b6;
+    }
+</style>
+
+
+<div class="photo-gallery">
+    <img id="profile-photo" src="Experiment1.jpg" alt="Joy Das Bairagya">
+    <div class="indicator-dots" id="indicator-dots"></div>
+</div>
+
+<script>
+    const photos = [
+        "Experiment1.jpg", 
+        "Experiment2.jpg", //Can add more//
+        
+    ];
+    let currentPhotoIndex = 0;
+    const photoElement = document.getElementById("profile-photo");
+    const dotsContainer = document.getElementById("indicator-dots");
+
+    // Create indicator dots
+    photos.forEach((_, index) => {
+        const dot = document.createElement("span");
+        dot.classList.add("dot");
+        if (index === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => {
+            currentPhotoIndex = index;
+            updatePhoto();
+        });
+        dotsContainer.appendChild(dot);
+    });
+
+    // Update photo and active dot
+    function updatePhoto() {
+        photoElement.src = photos[currentPhotoIndex];
+        document.querySelectorAll(".dot").forEach((dot, index) => {
+            dot.classList.toggle("active", index === currentPhotoIndex);
+        });
+    }
+
+    // Change photo on image click
+    photoElement.addEventListener("click", () => {
+        currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+        updatePhoto();
+    });
+</script>
+
+
+        <div class="section" id="about">
+            <h2>About Me</h2>
+               <p>
+                    I am currently a Ph.D. candidate in Physics at the Indian Institute of Technology Kanpur, working at the intersection of physics, biology, and game theory. My research integrates experimental work on social insects (indian queenless ant), theoretical modeling, and numerical simulations to investigate how collective and strategic decision-making emerges from the interactions of cognitively limited animals.
+                </p>
+                <p>
+                    My primary interest lies in <strong>behavioral game theory</strong> applied to non-human animal societies, particularly ants. I aim to mathematically capture the strategic decision-making observed in behavioral experiments and interpret these behaviors through the lens of game theory.
+                </p>
+                <p>
+                    I am also interested in the <strong>evolutionary origins of cooperation</strong> within the framework of evolutionary game dynamics. Classical evolutionary game theory often assumes that agents are myopic, not consciously maximizing utility, but instead adopting strategies that confer higher fitness. I seek to extend this view by incorporating insights from behavioral game theory, both experimentally and theoretically, to explore how real animal strategies can be modeled more accurately. This leads to a deeper question: if certain cognitive mechanisms are favored by evolution, what are the evolutionary reasons behind their persistence, and how do they contribute to decision-making efficiency in specific ecological contexts?
+                </p>
+
+            <h3>Education</h3>
+            <ul>
+                <li>Ph.D. in Physics, IIT Kanpur (2020 – Present)</li>
+                <li>M.Sc. in Physics, IIT Kanpur (2018 – 2020)</li>
+                <li>B.Sc. in Physics, Burdwan Raj College (2014 – 2017)</li>
+            </ul>
+        </div>
+    
+
+    <footer>
+    <p>&copy; 2025 Joy Das Bairagya</p>
+    <div class="social-links">
+        <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg" alt="Google Scholar" style="width:24px;height:24px;">
+        </a>
+        <a href="https://www.researchgate.net/profile/YOUR_PROFILE" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/ResearchGate_icon_SVG.svg" alt="ResearchGate" style="width:24px;height:24px;">
+        </a>
+        <a href="https://twitter.com/YOUR_USERNAME" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg" alt="Twitter" style="width:24px;height:24px;">
+        </a>
+        <a href="https://github.com/joydasbairagya" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" style="width:24px;height:24px;">
+        </a>
+    </div>
+</footer>
+</body>
+</html>
