@@ -88,34 +88,34 @@
     }
 
     /* Controls position */
-    .navigation-manual {
-      position: absolute;
-      width: 100%;
-      bottom: 10px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .manual-btn {
-      border: 2px solid #0077b6;
-      padding: 5px;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: 0.4s;
-      margin: 0 5px;
-    }
-
-    .manual-btn:hover {
-      background: #0077b6;
-    }
-
-    /* Slide switching logic */
-    #video1:checked ~ .slides {
-      transform: translateX(0);
-    }
-    #video2:checked ~ .slides {
-      transform: translateX(-50%);
-    }
+   .navigation-manual {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .manual-btn {
+    border: 2px solid #0077b6;
+    padding: 6px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.4s;
+    margin: 0 5px;
+    background: transparent;
+  }
+  
+  /* Hover effect */
+  .manual-btn:hover {
+    background: #0077b6;
+  }
+  
+  /* Active dot logic */
+  #video1:checked ~ .navigation-manual label[for="video1"],
+  #video2:checked ~ .navigation-manual label[for="video2"] {
+    background: #0077b6;   /* filled dot */
+  }
   </style>
 </head>
 <body>
@@ -168,7 +168,7 @@
       <!-- Radio buttons -->
       <input type="radio" name="radio-btn" id="video1" checked>
       <input type="radio" name="radio-btn" id="video2">
-
+    
       <!-- Slides -->
       <div class="slides">
         <div class="slide">
@@ -179,13 +179,13 @@
         </div>
         <div class="slide">
           <video controls>
-            <source src="Video2.mp4" type="video/mp4">
+            <source src="video2.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
       </div>
-
-      <!-- Manual Navigation -->
+    
+      <!-- Navigation Dots -->
       <div class="navigation-manual">
         <label for="video1" class="manual-btn"></label>
         <label for="video2" class="manual-btn"></label>
