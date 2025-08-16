@@ -1,212 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research - Joy Das Bairagya</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        header {
-            background: #0077b6;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 24px;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #005f86;
-            padding: 10px 0;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        h2 {
-            color: #0077b6;
-            border-bottom: 2px solid #0077b6;
-            padding-bottom: 5px;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #005f86;
-            color: white;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research - Joy Das Bairagya</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    header {
+      background: #0077b6;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #005f86;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    h2 {
+      color: #0077b6;
+      border-bottom: 2px solid #0077b6;
+      padding-bottom: 5px;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: #005f86;
+      color: white;
+    }
 
-        /* --- Video Slider Section --- */
-        .video-slider {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-            margin: 30px auto;
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        }
+    /* --- Video Slider Section --- */
+    .video-slider {
+      width: 100%;
+      max-width: 800px;
+      margin: 30px auto;
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
 
-        .slides {
-            width: 200%;
-            height: auto;
-            display: flex;
-        }
+    .slides {
+      display: flex;
+      width: 200%;
+      transition: transform 0.6s ease;
+    }
 
-        .slides input {
-            display: none;
-        }
+    .slide {
+      width: 100%;
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .slide {
-            width: 100%;
-            transition: 0.6s;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    .slide video {
+      width: 100%;
+      max-height: 450px;
+      border-radius: 10px;
+    }
 
-        .slide video {
-            width: 100%;
-            max-height: 450px;
-            border-radius: 10px;
-        }
+    /* Hide radio buttons */
+    .video-slider input {
+      display: none;
+    }
 
-        .navigation-manual {
-            position: absolute;
-            width: 100%;
-            margin-top: -40px;
-            display: flex;
-            justify-content: center;
-        }
+    /* Controls position */
+    .navigation-manual {
+      position: absolute;
+      width: 100%;
+      bottom: 10px;
+      display: flex;
+      justify-content: center;
+    }
 
-        .manual-btn {
-            border: 2px solid #0077b6;
-            padding: 5px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: 0.4s;
-            margin: 0 5px;
-        }
+    .manual-btn {
+      border: 2px solid #0077b6;
+      padding: 5px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.4s;
+      margin: 0 5px;
+    }
 
-        .manual-btn:hover {
-            background: #0077b6;
-        }
+    .manual-btn:hover {
+      background: #0077b6;
+    }
 
-        /* Slide Control */
-        #video1:checked ~ .first {
-            margin-left: 0;
-        }
-        #video2:checked ~ .first {
-            margin-left: -100%;
-        }
-    </style>
+    /* Slide switching logic */
+    #video1:checked ~ .slides {
+      transform: translateX(0);
+    }
+    #video2:checked ~ .slides {
+      transform: translateX(-100%);
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Research</h1>
-    </header>
-    
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="publications.html">Publications</a>
-        <a href="academics.html">Academics</a>
-        <a href="contact.html">Contact</a>
-        <a href="Joy DaS Bairagya.pdf" download>📄CV</a>
-    </nav>
-    
-    <div class="container">
-        <h2>Research Interests</h2>
+  <header>
+    <h1>Research</h1>
+  </header>
+  
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="publications.html">Publications</a>
+    <a href="academics.html">Academics</a>
+    <a href="contact.html">Contact</a>
+    <a href="Joy DaS Bairagya.pdf" download>📄CV</a>
+  </nav>
+  
+  <div class="container">
+    <h2>Research Interests</h2>
+    <ul>
+      <li>Behavioral experiments </li>
+      <li>Behavioral game theory applied to human and non-human animals</li>
+      <li>Collective decision-making in human and non-human</li>
+      <li>Evolutionary reasons of bounded rationality</li>
+      <li>Emergence and maintenance of cooperation </li>
+      <li>Cooperative game theory applied to biological systems</li>
+    </ul>
+
+    <h2>Current Research Projects</h2>
+    <ol>
+      <li>
+        <strong>Behavioral Experiments in <i>Diacamma indicum</i></strong>  
+        Two complementary experimental projects examining different aspects of nest relocation behavior in <i>Diacamma indicum</i> ants.  
         <ul>
-            <li>Behavioral experiments </li>
-            <li>Behavioral game theory applied to human and non-human animals</li>
-            <li>Collective decision-making in human and non-human</li>
-            <li>Evolutionary reasons of bounded rationality</li>
-            <li>Emergence and maintenance of cooperation </li>
-            <li>Cooperative game theory applied to biological systems</li>
+          <li>Designing and conducting controlled laboratory experiments to quantify decision-making strategies during relocation.</li>
+          <li>Interpreting experimental findings through the framework of behavioral game theory to understand the underlying strategic dynamics.</li>
         </ul>
+      </li>
+      <li>
+        <strong>Theoretical Study on Procedural Rationality</strong>  
+        Developed a formal model showing that bounded rationality — particularly procedural rationality — can be evolutionarily stable against von Neumann–Morgenstern (VNM) rationality in the context of hunter–gatherer societies.
+      </li>
+      <li>
+        <strong>Network Cooperation Dynamics</strong>  
+        Investigating how collaboration can promote and sustain cooperation in networked populations, using concepts from non-equilibrium statistical physics and evolutionary game theory.
+      </li>
+    </ol>
 
-        <h2>Current Research Projects</h2>
-        <ol>
-            <li>
-                <strong>Behavioral Experiments in <i>Diacamma indicum</i></strong>  
-                Two complementary experimental projects examining different aspects of nest relocation behavior in <i>Diacamma indicum</i> ants.  
-                <ul>
-                    <li>Designing and conducting controlled laboratory experiments to quantify decision-making strategies during relocation.</li>
-                    <li>Interpreting experimental findings through the framework of behavioral game theory to understand the underlying strategic dynamics.</li>
-                </ul>
-            </li>
-            <li>
-                <strong>Theoretical Study on Procedural Rationality</strong>  
-                Developed a formal model showing that bounded rationality — particularly procedural rationality — can be evolutionarily stable against von Neumann–Morgenstern (VNM) rationality in the context of hunter–gatherer societies.
-            </li>
-            <li>
-                <strong>Network Cooperation Dynamics</strong>  
-                Investigating how collaboration can promote and sustain cooperation in networked populations, using concepts from non-equilibrium statistical physics and evolutionary game theory.
-            </li>
-        </ol>
+    <!-- Video Showcase Section -->
+    <h2>Research Videos</h2>
+    <div class="video-slider">
+      <!-- Radio buttons -->
+      <input type="radio" name="radio-btn" id="video1" checked>
+      <input type="radio" name="radio-btn" id="video2">
 
-        <!-- Video Showcase Section -->
-        <h2>Showcase of My Work</h2>
-        <div class="video-slider">
-          <div class="slides">
-            <input type="radio" name="radio-btn" id="video1" checked>
-            <input type="radio" name="radio-btn" id="video2">
-
-            <div class="slide first">
-              <video controls>
-                <source src="video1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-
-            <div class="slide">
-              <video controls>
-                <source src="Video2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-
-            <!-- Manual Navigation -->
-            <div class="navigation-manual">
-              <label for="video1" class="manual-btn"></label>
-              <label for="video2" class="manual-btn"></label>
-            </div>
-          </div>
+      <!-- Slides -->
+      <div class="slides">
+        <div class="slide">
+          <video controls>
+            <source src="video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
+        <div class="slide">
+          <video controls>
+            <source src="video2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <!-- Manual Navigation -->
+      <div class="navigation-manual">
+        <label for="video1" class="manual-btn"></label>
+        <label for="video2" class="manual-btn"></label>
+      </div>
     </div>
+  </div>
 
-    <footer>
-        <p>&copy; 2025 Joy Das Bairagya</p>
-        <div class="social-links">
-            <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg" alt="Google Scholar" style="width:24px;height:24px;">
-            </a>
-            <a href="https://www.researchgate.net/profile/YOUR_PROFILE" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/ResearchGate_icon_SVG.svg" alt="ResearchGate" style="width:24px;height:24px;">
-            </a>
-            <a href="https://twitter.com/YOUR_USERNAME" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg" alt="Twitter" style="width:24px;height:24px;">
-            </a>
-            <a href="https://github.com/joydasbairagya" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" style="width:24px;height:24px;">
-            </a>
-        </div>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Joy Das Bairagya</p>
+    <div class="social-links">
+      <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg" alt="Google Scholar" style="width:24px;height:24px;">
+      </a>
+      <a href="https://www.researchgate.net/profile/YOUR_PROFILE" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/ResearchGate_icon_SVG.svg" alt="ResearchGate" style="width:24px;height:24px;">
+      </a>
+      <a href="https://twitter.com/YOUR_USERNAME" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg" alt="Twitter" style="width:24px;height:24px;">
+      </a>
+      <a href="https://github.com/joydasbairagya" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" style="width:24px;height:24px;">
+      </a>
+    </div>
+  </footer>
 </body>
 </html>
